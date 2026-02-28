@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snek Eater Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="Asset/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="mediaquerry.css">
+  </head>
+  <body>
+    
+    <div class="start-container">
+      <h2 class="text-3d">Welcome to Snek Eater</h2>
+      <button class="menu-btn">PRESS START</button>
+      <button class="menu-btn">SETTINGS</button>
+      <button class="menu-btn">MODE</button>
+    </div>
+
+    <div id="settingsPopup" class="popup hidden">
+      <h3>Background</h3>
+      <button onclick="setBackground('default')">Default</button>
+      <button onclick="setBackground('dark')">Dark</button>
+      <button onclick="setBackground('light')">Light</button>
+      <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="modePopup" class="popup hidden">
+      <h3>Game Mode</h3>
+      <button onclick="setMode('easy')">Easy</button>
+      <button onclick="setMode('medium')">Medium</button>
+      <button onclick="setMode('hard')">Hard</button>
+      <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div class="bubbles-container"></div>
+    <div class="game-container">
+      <div class="wrapper">
+        <div class="game-details">
+          <span class="score">Score: 0</span>
+          <button id="pauseBtn" class="pause-btn">
+            <i class="fa-solid fa-pause"></i>
+          </button>
+          <span class="high-score">High Score: 0</span>
+        </div>
+        <div class="play-board"></div>
+        <div class="controls">
+          <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+          <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+          <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+          <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="highscoreCongrats" class="hidden">
+      Congratulations! You beat your high score!
+    </div>
+
+    <!-- Audio -->
+      <audio id="bgMusic" src="music1.mp3" loop></audio>
+      <audio id="eatSound" src="sound.mp3"></audio>
+      <audio id="congratsSound" src="congrats.mp4"></audio>
+      
+
+     <script src="script.js" defer></script>
+  </body>
+</html>

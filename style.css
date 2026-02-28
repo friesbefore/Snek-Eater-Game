@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("Asset/background.gif") center / cover no-repeat;
+  background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+}
+
+.text-3d {
+  font-size: 4rem;
+  font-weight: 800;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  z-index: 10;
+  background: linear-gradient(90deg, #00a637, #1aff00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.18),
+    0 2px 0 rgba(0, 0, 0, 0.16),
+    0 3px 0 rgba(0, 0, 0, 0.14),
+    0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.start-container {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100vh;
+}
+
+.menu-btn {
+  font-size: 1rem;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: rgba(43, 184, 11, 0.9);
+  color: white;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.menu-btn:hover {
+  background: #1aff00;
+  color: #1f5d06;
+  box-shadow: 0 0 25px #1aff00;
+  transform: scale(1.1);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px 30px;
+  border-radius: 15px;
+  text-align: center;
+  z-index: 100;
+  color: white;
+}
+
+.popup button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #2bb80b;
+  color: white;
+}
+
+.popup button:hover {
+  background: #1aff00;
+  color: #1f5d06;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  display: none;
+  width: 65vmin;
+  height: 75vmin;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  background: #293447;
+  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.game-details {
+  color: #b8c6dc;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-container {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #212837;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.play-board .food {
+  background: #ff003d;
+}
+.play-board .head {
+  background: #41ba00;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #b8c6dc;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171b26;
+  
+}
+
+.bubbles-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+#highscoreCongrats {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+
+#highscoreCongrats.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+
+.pause-btn {
+  background: transparent;
+  border: none;
+  color: #b8c6dc;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+
+}
+
+.pause-btn:hover {
+  color: #b8c6dc;
+}

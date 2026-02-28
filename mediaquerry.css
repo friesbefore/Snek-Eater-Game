@@ -1,0 +1,36 @@
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 95vmin;
+    height: 115vmin;
+  }
+  .game-details {
+    font-size: 14px;
+    padding: 15px 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .controls {
+    display: flex;
+  }
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+
+  #highscoreCongrats {
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    width: 85%;
+    max-width: 300px;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 12px 18px;
+  }
+
+  .pause-btn {
+    font-size: 14px;
+  }
+}
